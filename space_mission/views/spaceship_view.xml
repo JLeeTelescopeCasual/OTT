@@ -28,5 +28,28 @@
                 </form>
             </field>
         </record>
+        
+        <record model='ir.ui.view' id='spaceship_view_list'>
+            <field name="name">space_mission.spaceship.list</field>
+            <field name="model">spaceship</field>
+            <field name="arch" type="xml">
+                <tree string="Spaceship List">
+                    <field name="name"/>
+                    <field name="description"/>
+                    <field name="number_of_passengers"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record model="ir.ui.view" id="spaceship_view_search">
+            <field name="name">space_mission.spaceship.search</field>
+            <field name="model">spaceship</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name"/>
+                    <field name="description"/>
+                </search>
+            </field>
+        </record>
     </data>
 </odoo>
