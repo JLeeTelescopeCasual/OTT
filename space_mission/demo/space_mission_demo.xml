@@ -1,0 +1,32 @@
+<?xml vesion="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record model="space_mission.spaceship" id="tls">
+            <field name="name">Tesla</field>
+            <field name="description">A Tesla launched into space</field>
+            <field name="length">16.4 feet</field>
+            <field name="diameter">8 ft</field>
+            <field name="fuel_type">nuclear</field>
+            <field name="number_of_passengers">4</field>
+            <field name="active">True</field>
+        </record>
+        <record model="space_mission.spaceship" id="gustav">
+            <field name="name">Gus the Bus</field>
+            <field name="description">A converted school bus</field>
+            <field name="length">40 ft</field>
+            <field name="diameter">10 ft</field>
+            <field name="fuel_type">rocket_fuel</field>
+            <field name="number_of_passengers">12</field>
+            <field name="active">True</field>
+        </record>
+        <record model="space_mission.spaceship" id="brynmore">
+            <field name="name">Brynmore Cottage</field>
+            <field name="description">A classic hillside cottage</field>
+            <field name="length">8 ft</field>
+            <field name="diameter">20 ft</field>
+            <field name="fuel_type">nuclear</field>
+            <field name="number_of_passengers">18</field>
+            <field name="active">True</field>
+        </record>
+    </data>
+</odoo>
