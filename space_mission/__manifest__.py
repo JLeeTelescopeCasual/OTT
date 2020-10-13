@@ -18,7 +18,7 @@
 	'depends': ['base'],
 
 	'data': [
-
+        'views/spaceship_view.xml',
 	],
 
 	'demo': [

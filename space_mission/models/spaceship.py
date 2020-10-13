@@ -8,6 +8,7 @@ class Spaceship(models.Model):
     _description = 'Something to get us to the Moon!!'
     
     name = fields.Char(string='Title', required=True)
+    description = fields.Char(string='Description', required=False)
     
     length = fields.Float(string='Length', required=True)
     diameter = fields.Float(string='Diameter', required=True)
