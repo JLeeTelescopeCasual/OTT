@@ -15,3 +15,10 @@ class SaleOrder(models.Model):
     student_ids = fields.Many2many(string='Session Students',
                                    related='session_id.student_ids')
     
+    # for inheritance breakages
+    is_taxcloud = fields.Boolean(string="Is Tax Cloud",
+                                 default=False)
+    
+    # for inheritance breakages
+    is_taxcloud_configured = fields.Boolean(string="Is Tax Cloud Configured",
+                                            default=False)
