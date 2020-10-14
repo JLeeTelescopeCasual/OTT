@@ -23,9 +23,35 @@
                             <page string="Description">
                                 <field name="description"/>
                             </page>
+                            <page string="Sessions">
+                                <field name="session_ids"/>
+                            </page>
                         </notebook>
                     </sheet>
                 </form>
+            </field>
+        </record>
+        
+        <record model='ir.ui.view' id='course_view_list'>
+            <field name="name">academy.course.list</field>
+            <field name="model">academy.course</field>
+            <field name="arch" type="xml">
+                <tree string="Course List">
+                    <field name="name"/>
+                    <field name="description"/>
+                    <field name="level"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record model="ir.ui.view" id="course_view_search">
+            <field name="name">academy.course.search</field>
+            <field name="model">academy.course</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name"/>
+                    <field name="description"/>
+                </search>
             </field>
         </record>
     </data>
