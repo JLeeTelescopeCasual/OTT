@@ -16,6 +16,7 @@
                             <group>
                                 <field name="length"/>
                                 <field name="diameter"/>
+                                <field name="volume" force_save="1"/>
                                 <field name="fuel_type"/>
                             </group>
                             <notebook>

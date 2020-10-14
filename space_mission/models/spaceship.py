@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from odoo import models, fields, api
+from odoo.exceptions import UserError, ValidationError
 
 class Spaceship(models.Model):
 
@@ -12,6 +13,7 @@ class Spaceship(models.Model):
     
     length = fields.Float(string='Length', required=True)
     diameter = fields.Float(string='Diameter', required=True)
+    volume = fields.Float(string='Volume', readonly=True)
     
     fuel_type = fields.Selection(string='Fuel Type',
                                  required=True,
@@ -24,3 +26,22 @@ class Spaceship(models.Model):
                                           copy=False)
     
     active = fields.Boolean(string='Active', default=True)
+
+    @api.onchange('length','diameter')
+    def _onchange_length_vs_diameter(self):
+        if self.diameter > self.length:
+            raise UserError('Length must be longer than diameter')
+            
+        self.volume = self.length * 3.14159265358979 * ( self.diameter / 2 ) * ( self.diameter / 2 )
+            
+    @api.constrains('length')
+    def _check_length(self):
+        for record in self:
+            if record.length < 0:
+                raise ValidationError('Length must be set greater than 0.')
+                
+    @api.constrains('diameter')
+    def _check_diameter(self):
+        for record in self:
+            if record.diameter < 0:
+                raise ValidationError('Diameter must be set greater than 0.')
